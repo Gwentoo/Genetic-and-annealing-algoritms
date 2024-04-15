@@ -71,7 +71,7 @@ def Mutant(image, array):
     return (array, FitnessMax(array, image))
 
 # Алгоритм
-def genetic(image, name):
+def genetic(image):
     count = 100 #количество особей в популяции
     chance = 0.2 #шанс мутации
     M, N = size(image)
@@ -111,7 +111,7 @@ def genetic(image, name):
 
 #Запуск
 image1 = Image2Matrix('Gear.png')
-print(genetic(image1, "gear"))
+print(genetic(image1))
 
 
 
