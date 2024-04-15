@@ -1,7 +1,6 @@
 import numpy as np
 from PIL import Image
 import random
-import time
 
 # Считывание изображения и перевод в матрицу из 0 и 1
 def Image2Matrix(img_name):
@@ -71,33 +70,14 @@ def Mutant(image, array):
     array = np.array(array)
     return (array, FitnessMax(array, image))
 
-#Создание гиф
-def gif(iteration, name):
-    frames = []
-    for i in range(iteration):
-        frame = Image.open(f'{name}{i}.png')
-        frames.append(frame)
-    frames[0].save(
-        f'Res_{name}.gif',
-        save_all=True,
-        append_images=frames[1:],  # Срез который игнорирует первый кадр.
-        optimize=True,
-        duration=200,
-        loop=0
-    )
-
 # Алгоритм
 def genetic(image, name):
     count = 100 #количество особей в популяции
     chance = 0.2 #шанс мутации
-    iteration = 0
     M, N = size(image)
-    res_time = 0
     Population = createPopulation(image, count, M, N)
     history = [] #история точности
     for i in range(1000):
-        start_time = time.time()
-        iteration += 1
 
         #Составляем список родителей
         parents = []
@@ -119,22 +99,15 @@ def genetic(image, name):
         Population = sorted(posterity, key=lambda x: x[1], reverse=True)
         Population = Population[:count]
 
-        end_time = time.time()
-        res_time += (end_time - start_time)
-
         #Сохраняем изображение и точность лучшей особи
         history.append(Population[0][1])
-
-        #im2 = Image.fromarray(np.uint8(255 - Population[0][0]*255))
-        #im2.save(f'{name}{i}.png')
 
         #Критерий остановки
         if len(history) >= 3:
             if (Population[0][1] == 1) or (history[-1] == history[-2] == history[-3]):
                 break
 
-    #gif(iteration, name)
-    return [M*N, iteration, res_time, max(history)]
+    return [M*N,  max(history)]
 
 #Запуск
 image1 = Image2Matrix('Gear.png')
