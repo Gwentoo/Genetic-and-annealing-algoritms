@@ -91,7 +91,7 @@ def genetic(image):
                 new_gen = Crossing(image, parents[p][0], parents[j][0])
                 x = random.random()
 
-                #Создаем большую мутацию, если 5 раз подряд одинаковая точность
+                #Создаем большую мутацию
                 if x <= chance:
                     new_gen = Mutant(image, new_gen[0])
 
