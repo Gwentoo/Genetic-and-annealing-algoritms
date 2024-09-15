@@ -7,4 +7,4 @@ ___
 ___
 # Работа генетического алгоритма
 
-![Тест](https://www.dropbox.com/scl/fi/k36r47lbmr072da3b154u/E.png?rlkey=696izsdagf2rqn74eyykrj74y&st=cz2d5b13&dl=0)
+![Тест](/E.[ng)
