@@ -26,4 +26,4 @@ ___
 ___
 # Работа метода имитации отжига
 
-![](TestAnnealing/)
+![](TestAnnealing/cities_200.gif)
