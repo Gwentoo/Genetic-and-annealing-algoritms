@@ -7,5 +7,20 @@ ___
 ___
 # Работа генетического алгоритма
 
-![](E.png)
-![](Res_45x45.gif)
+![](TestGen/m_m.png)
+![](TestGen/Res_25x25.gif)
+
+![](TestGen/A.png)
+![](TestGen/Res_27x27.gif)
+
+![](TestGen/T.png)
+![](TestGen/Res_30x30.gif)
+
+![](TestGen/M.png)
+![](TestGen/Res_35x35.gif)
+
+![](TestGen/E.png)
+![](TestGen/Res_45x45.gif)
+
+![](TestGen/X.png)
+![](TestGen/Res_55x55.gif)
